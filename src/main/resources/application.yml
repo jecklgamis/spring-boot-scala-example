@@ -1,0 +1,5 @@
+application:
+  title: "An example Spring Boot app using Scala"
+
+logging:
+  file: logs/springboot-scala-example.log
