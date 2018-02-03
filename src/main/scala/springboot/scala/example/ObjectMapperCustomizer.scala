@@ -1,4 +1,4 @@
-package com.jecklgamis.springboot.example
+package springboot.scala.example
 
 import com.fasterxml.jackson.datatype.joda.JodaModule
 import com.fasterxml.jackson.module.scala.DefaultScalaModule

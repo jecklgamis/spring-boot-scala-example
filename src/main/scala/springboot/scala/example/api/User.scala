@@ -1,4 +1,4 @@
-package com.jecklgamis.springboot.example.api
+package springboot.scala.example.api
 
 import javax.xml.bind.annotation.{XmlAccessType, XmlAccessorType, XmlElement, XmlRootElement}
 
