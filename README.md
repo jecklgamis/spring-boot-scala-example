@@ -2,56 +2,34 @@
 
 [![Build Status](https://travis-ci.org/jecklgamis/springboot-scala-example.svg?branch=master)](https://travis-ci.org/jecklgamis/springboot-scala-example)
 
-This is an example SpringBoot app using Scala. This uses the Jetty container.
+This is an example SpringBoot app using Scala. 
 
+* Uses Jetty web container
+* Starts HTTP and HTTPs listener 
+* Enables some actuator endpoints (health, metrics)
 
 ## Running The App
+Ensure you have Java 8 or later.
 ```
-mvn clean package
+./mvnw clean package
 java -jar target/springboot-scala-example.jar
 ```
 
-## Running The App In Docker
-
+## Running The App Using Docker
+Ensure you have a working Docker environment.
 ```
-mvn clean package
-docker build -t springboot-scala-example .
-docker run springboot-scala-example
+make dist image run
 ```
-
 
 ## Testing The Endpoints
 Point your browser to `http://localhost:8080` or use `curl` in command line.
 
 ```
 curl -v  http://localhost:8080/
+curl -v -k https://localhost:8443/
 ```
-
-## JSON/XML Serialization Examples
-
-GET JSON response
-```
-curl -v -H "Accept:application/json" http://localhost:8080/user/some-id
-```
-
-GET XML response
-```
-curl -v -H "Accept:application/xml" http://localhost:8080/user/some-id
-```
-
-PUT JSON request
-```
-curl -v  -X PUT  -H "Content-Type:application/json"  http://localhost:8080/user -d'{"username":"user","email":"user@example.com"}'
-```
-
-PUT XML request
-```
-curl -v  -X PUT  -H "Content-Type:application/xml"  http://localhost:8080/user -d'<?xml version="1.0" encoding="UTF-8" standalone="yes"?><user><username>me</username><email>me@example.com</email></user>'
-```
-
-## Makefile
-A wrapper Makefile can save some keystrokes. Type `make dist image run` to build and run the app in Docker.
-
-Have fun!
+Actuator endpoints:
+* `http://localhost:8080/actuator/metrics`
+* `http://localhost:8080/actuator/health`
 
 
