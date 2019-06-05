@@ -1,5 +1,6 @@
 application:
-  title: "An example Spring Boot app using Scala"
+  name: "springboot-scala-example"
+  description: "An example Spring Boot app using Scala"
 
 server:
   http:
