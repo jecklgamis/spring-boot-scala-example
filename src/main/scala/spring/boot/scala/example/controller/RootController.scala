@@ -1,4 +1,4 @@
-package springboot.scala.example.controller
+package spring.boot.scala.example.controller
 
 import java.time.LocalDateTime
 

@@ -1,5 +1,5 @@
 application:
-  name: "springboot-scala-example"
+  name: "spring-boot-scala-example"
   description: "An example Spring Boot app using Scala"
 
 server:
@@ -13,7 +13,7 @@ server:
     key-store-password: changeit
 
 logging:
-  file: logs/springboot-scala-example.log
+  file: logs/spring-boot-scala-example.log
 
 management:
   endpoints:
