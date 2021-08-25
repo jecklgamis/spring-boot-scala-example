@@ -31,6 +31,8 @@ jobs:
 
           # Replace placeholders in the template-files files
           sed -i "s/%NAME%/${NAME}/g" .github/template-files/*
+          sed -i "s/jecklgamis/${ACTOR}/g" .github/template-files/*
+          sed -i "s/spring-boot-scala-example/${NAME}/g" .github/template-files/*
           sed -i "s/%REPOSITORY%/${GITHUB_REPOSITORY/\//\\/}/g" .github/template-files/*
           sed -i "s/%GROUP%/${GROUP}/g" .github/template-files/*
 
