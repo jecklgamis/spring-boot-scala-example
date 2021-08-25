@@ -37,6 +37,11 @@ jobs:
           # Update package references in sources
           find src -type f -exec sed -i "s/spring.boot.scala.example/${GROUP}/g" {} +
 
+          # Update K8s deployment files
+          find deployment -type f -exec sed -i "s/spring-boot-scala-example/${NAME}/g" {} +
+          find deployment -type f -exec sed -i "s/spring.boot.scala.example/${GROUP}/g" {} +
+          find deployment -type f -exec sed -i "s/jecklgamis/${ACTOR}/g" {} +
+
           # Update shell scripts
           find . -name "*.sh" -type f -exec sed -i "s/spring-boot-scala-example/${NAME}/g" {} +
           find . -name "*.sh" -type f -exec sed -i "s/spring.boot.scala.example/${GROUP}/g" {} +
