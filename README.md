@@ -8,9 +8,13 @@ This is an example Spring Boot app using Scala.
 * Starts HTTP and HTTPs listener 
 * Enables some actuator endpoints (health, metrics)
 
+This is a **Github Template** project. You can create a copy of this project from a clean slate. Simply click
+<kbd>Use this template</kbd> button.
+
 ## Running The App
 Ensure you have Java 8 or later.
 ```
+./generate-keystore.sh
 ./mvnw clean package
 java -jar target/spring-boot-scala-example.jar
 ```

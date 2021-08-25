@@ -1,19 +1,22 @@
-FROM jecklgamis/java-runtime:latest
+FROM jecklgamis/openjdk-8-jre
 MAINTAINER Jerrico Gamis <jecklgamis@gmail.com>
 
+ENV APP_HOME /app
+
 RUN groupadd -r app && useradd -r -gapp app
-RUN mkdir -m 0755 -p /usr/local/app/bin
-RUN mkdir -m 0755 -p /usr/local/app/config
-RUN mkdir -m 0755 -p /usr/local/app/logs/
+RUN mkdir -m 0755 -p ${APP_HOME}/bin
+RUN mkdir -m 0755 -p ${APP_HOME}/config
+RUN mkdir -m 0755 -p ${APP_HOME}/logs/
 
-COPY target/spring-boot-scala-example.jar /usr/local/app/bin
-COPY docker-entrypoint.sh /usr/local/app/bin
+COPY target/spring-boot-scala-example.jar ${APP_HOME}/bin
+COPY docker-entrypoint.sh /
 
-RUN chown -R app:app /usr/local/app
-RUN chmod +x /usr/local/app/bin/docker-entrypoint.sh
+RUN chown -R app:app ${APP_HOME}
+RUN chmod +x /docker-entrypoint.sh
 
 EXPOSE 8080
 EXPOSE 8443
 
-CMD ["/usr/local/app/bin/docker-entrypoint.sh"]
+WORKDIR ${APP_HOME}
+CMD ["/docker-entrypoint.sh"]
 
