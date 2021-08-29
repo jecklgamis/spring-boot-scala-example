@@ -35,6 +35,7 @@ jobs:
           sed -i "s/%GROUP%/${GROUP}/g" .github/template-files/*
 
           # Update package references in sources
+          find src -type f -exec sed -i "s/spring-boot-scala-example/${NAME}/g" {} +
           find src -type f -exec sed -i "s/spring.boot.scala.example/${GROUP}/g" {} +
 
           # Update K8s deployment files
