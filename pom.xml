@@ -15,7 +15,7 @@
     </parent>
 
     <properties>
-        <scala.version>2.13.6</scala.version>
+        <scala.version>3.0.2</scala.version>
         <jackson.version>2.11.3</jackson.version>
     </properties>
 
@@ -47,7 +47,7 @@
     <dependencies>
         <dependency>
             <groupId>org.scala-lang</groupId>
-            <artifactId>scala-library</artifactId>
+            <artifactId>scala3-library_3</artifactId>
             <version>${scala.version}</version>
         </dependency>
         <dependency>
@@ -124,7 +124,7 @@
             <plugin>
                 <groupId>net.alchim31.maven</groupId>
                 <artifactId>scala-maven-plugin</artifactId>
-                <version>4.4.0</version>
+                <version>4.5.4</version>
                 <executions>
                     <execution>
                         <id>scala-compile-first</id>

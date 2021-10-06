@@ -5,6 +5,8 @@ default:
 	cat ./Makefile
 dist: keystore
 	./mvnw clean package
+dist-using-sbt: keystore
+	sbt assembly
 image:
 	docker build -t $(IMAGE_NAME):$(IMAGE_TAG) .
 run:
@@ -14,6 +16,7 @@ run-bash:
 keystore:
 	@./generate-keystore.sh
 all: dist image
+up: all run
 push:
 	 docker push $(IMAGE_NAME):$(IMAGE_TAG)
 	 docker push $(IMAGE_NAME):latest
