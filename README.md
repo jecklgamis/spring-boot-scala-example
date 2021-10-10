@@ -51,8 +51,8 @@ curl http://localhost:8080/
 curl http://localhost:8080/buildInfo
 curl http://localhost:8080/probe/live
 curl http://localhost:8080/probe/ready
-curl http://localhost:8080/actuor/metrics
-curl http://localhost:8080/actuor/health
+curl http://localhost:8080/actuator/metrics
+curl http://localhost:8080/actuator/health
 ```
 or you can run `./smoke-tests.sh`
 
