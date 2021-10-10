@@ -54,6 +54,7 @@ curl http://localhost:8080/probe/ready
 curl http://localhost:8080/actuor/metrics
 curl http://localhost:8080/actuor/health
 ```
+or you can run `./smoke-tests.sh`
 
 ## Building With [SBT](https://www.scala-sbt.org/)
 
