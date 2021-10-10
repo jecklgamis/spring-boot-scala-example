@@ -21,7 +21,7 @@ push:
 	 docker push $(IMAGE_NAME):$(IMAGE_TAG)
 	 docker push $(IMAGE_NAME):latest
 tag:
-	 git tag -m "springboot-scala-example-v$(IMAGE_TAG)" -a "v$(IMAGE_TAG)"
+	 git tag -m "spring-boot-scala-example-v$(IMAGE_TAG)" -a "v$(IMAGE_TAG)"
 	 git push --tags
 deploy: dist image push
 	cd deployment/k8s && ./create-k8s-files.py --version $(IMAGE_TAG)
