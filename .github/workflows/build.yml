@@ -20,6 +20,8 @@ jobs:
           path: ~/.m2
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
+      - name: Generate build info
+        run: ./generate-build-info.sh
       - name: Generate keystore
         run: ./generate-keystore.sh
       - name: Build with Maven
