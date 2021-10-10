@@ -3,17 +3,7 @@ application:
   description: "An example Spring Boot app using Scala"
 
 server:
-  http:
-    port: 8080
-  compression:
-    enabled: true
-  port: 8443
-  ssl:
-    key-store: classpath:keystore.pfx
-    key-store-password: changeit
-
-logging:
-  file: logs/spring-boot-scala-example.log
+  port: 8080
 
 management:
   endpoints:
@@ -27,3 +17,7 @@ management:
     health:
       enabled: true
       show-details: always
+
+logging:
+  file:
+    name: logs/spring-boot-scala-example.log

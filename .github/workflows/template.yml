@@ -58,6 +58,11 @@ jobs:
           find . -name pom.xml -type f -exec sed -i "s/spring.boot.scala.example/${GROUP}/g" {} +
           find . -name pom.xml -type f -exec sed -i "s/com.jecklgamis/${GROUP}/g" {} +
 
+          # Update build.sbt
+          find . -name build.sbt -type f -exec sed -i "s/spring-boot-scala-example/${NAME}/g" {} +
+          find . -name build.sbt -type f -exec sed -i "s/spring.boot.scala.example/${GROUP}/g" {} +
+          find . -name build.sbt -type f -exec sed -i "s/com.jecklgamis/${GROUP}/g" {} +
+
           # Update Dockerfile
           find . -name Dockerfile -type f -exec sed -i "s/spring-boot-scala-example/${NAME}/g" {} +
           find . -name Dockerfile -type f -exec sed -i "s/Jerrico Gamis/FirstName LastName/g" {} +

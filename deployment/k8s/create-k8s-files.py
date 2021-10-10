@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 
-import os
-
 import click
+import os
 from jinja2 import Template
 
 

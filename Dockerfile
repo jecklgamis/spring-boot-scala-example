@@ -1,5 +1,7 @@
-FROM jecklgamis/openjdk-8-jre
+FROM ubuntu:20.04
 MAINTAINER Jerrico Gamis <jecklgamis@gmail.com>
+
+RUN apt update -y && apt install -y openjdk-8-jre-headless && rm -rf /var/lib/apt/lists/*
 
 ENV APP_HOME /app
 
