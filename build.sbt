@@ -1,5 +1,5 @@
-val springBootVersion = "2.5.5"
-val jacksonVersion = "2.13.0"
+val springBootVersion = "2.6.7"
+val jacksonVersion = "2.13.2"
 
 Global / onChangedBuildSource := ReloadOnSourceChanges
 
@@ -8,11 +8,11 @@ lazy val root = project
   .settings(
     name := "spring-boot-scala-example",
     version := "1.0.0-SNAPSHOT",
-    scalaVersion := "3.0.2",
+    scalaVersion := "3.1.2",
     assembly / mainClass := Some("spring.boot.scala.example.ExampleApp"),
     assembly / assemblyJarName := "spring-boot-scala-example.jar",
     libraryDependencies += "org.springframework.boot" % "spring-boot-starter-web" % springBootVersion
-      exclude ("org.springframework.boot", "spring-boot-starter-tomcat"),
+      exclude("org.springframework.boot", "spring-boot-starter-tomcat"),
     libraryDependencies += "org.springframework.boot" % "spring-boot-starter-jetty" % springBootVersion,
     libraryDependencies += "org.springframework.boot" % "spring-boot-starter-actuator" % springBootVersion,
     libraryDependencies += "org.springframework.boot" % "spring-boot-starter-test" % springBootVersion % Test,
@@ -29,14 +29,14 @@ ThisBuild / javacOptions ++= Seq("-source", "1.8")
 ThisBuild / resolvers += Resolver.jcenterRepo
 
 ThisBuild / assemblyMergeStrategy := {
-  case PathList(ps @ _*) if ps.contains("module-info.class") =>
+  case PathList(ps@_*) if ps.contains("module-info.class") =>
     MergeStrategy.concat
   case PathList("META-INF", "spring-configuration-metadata.json") =>
     MergeStrategy.concat
   case PathList("META-INF", "additional-spring-configuration-metadata.json") =>
     MergeStrategy.concat
-  case PathList("META-INF", "spring.handlers")  => MergeStrategy.concat
-  case PathList("META-INF", "spring.schemas")   => MergeStrategy.concat
+  case PathList("META-INF", "spring.handlers") => MergeStrategy.concat
+  case PathList("META-INF", "spring.schemas") => MergeStrategy.concat
   case PathList("META-INF", "spring.factories") => MergeStrategy.concat
   case PathList("META-INF", "web-fragment.xml") => MergeStrategy.concat
   case PathList("META-INF", "spring-autoconfigure-metadata.properties") =>
