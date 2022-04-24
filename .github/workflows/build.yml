@@ -63,4 +63,4 @@ jobs:
       - name: Generate keystore
         run: ./generate-keystore.sh
       - name: Build with sbt
-        run: sbt -v +test
+        run: sbt -v test assembly
