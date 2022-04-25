@@ -87,10 +87,12 @@ jobs:
             LICENSE
       - name: Commit files
         run: |
+          export LC_CTYPE=C
+          export LANG=C
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add .
-          git commit -m "Prepare repo"
+          git commit -a -m "Prepare repo"
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
