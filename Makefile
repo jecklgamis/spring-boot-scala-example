@@ -15,5 +15,7 @@ build-info:
 	@./generate-build-info.sh
 keystore:
 	@./generate-keystore.sh
-all: dist image
+chart:
+	cd deployment/k8s/helm && make package
+all: dist image chart
 up: all run
