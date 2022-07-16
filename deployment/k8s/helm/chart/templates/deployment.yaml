@@ -39,7 +39,7 @@ spec:
               protocol: TCP
           livenessProbe:
             httpGet:
-              path: /probe/ready
+              path: /probe/live
               port: http
           readinessProbe:
             httpGet:
