@@ -91,19 +91,20 @@ make install
 This creates:
 * a service account
 * a pod running on port 8080
-* a service listening on port 80 (and implicitly Endpoint resources corresponding to the number of pods)
+* a service listening on port 80 (and implicitly endpoint resources corresponding to the number of pods)
 * a deployment (and implicitly replicaset)
-* an ingress for Istio (assumes you have Istio installed in your cluster) 
+* an ingress for Istio (change `kubernetes.io/ingress.class` if you're using a different ingress controller such as nginx) 
 
-Use this command to verify if the app is running: 
+To connect to the app locally, create a tunnel to the service:
+```bash
+kubectl port-forward service/spring-boot-scala-example 18080:80
+curl http://localhost:18080
+```
+
+If you have ingress controller installed in your cluster, you can connect using
 ````
 curl -v -H "Host:spring-boot-scala-example.local" http://<your-ingress-load-balancer-hostname>
 ````
-You can use a dedicated DNS for your app. Change `spring-boot-scala-example.local` in ingress section in `values.yaml`, 
-ensure it points to your ingress load balancer, and deploy the chart with `make upgrade`
-
-If you are using Nginx ingress controller, simply switch `kubernetes.io/ingress.class` to nginx in the `values.yaml` 
-and redeploy.
 
 ## Contributing
 Please raise issue or pull request! Thanks!
