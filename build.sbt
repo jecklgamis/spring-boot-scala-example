@@ -1,4 +1,4 @@
-val springBootVersion = "2.6.7"
+val springBootVersion = "3.1.5"
 val jacksonVersion = "2.13.2"
 
 Global / onChangedBuildSource := ReloadOnSourceChanges
@@ -8,12 +8,13 @@ lazy val root = project
   .settings(
     name := "spring-boot-scala-example",
     version := "1.0.0-SNAPSHOT",
-    scalaVersion := "3.1.2",
+    scalaVersion := "3.3.1",
     assembly / mainClass := Some("spring.boot.scala.example.ExampleApp"),
     assembly / assemblyJarName := "spring-boot-scala-example.jar",
     libraryDependencies += "org.springframework.boot" % "spring-boot-starter-web" % springBootVersion
       exclude("org.springframework.boot", "spring-boot-starter-tomcat"),
     libraryDependencies += "org.springframework.boot" % "spring-boot-starter-jetty" % springBootVersion,
+    libraryDependencies += "jakarta.servlet" % "jakarta.servlet-api" % "5.0.0",
     libraryDependencies += "org.springframework.boot" % "spring-boot-starter-actuator" % springBootVersion,
     libraryDependencies += "org.springframework.boot" % "spring-boot-starter-test" % springBootVersion % Test,
     libraryDependencies += "com.fasterxml.jackson.core" % "jackson-databind" % jacksonVersion,
