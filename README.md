@@ -6,7 +6,7 @@ This is an example Spring Boot app using Scala.
 
 Docker run:
 ```
-docker run -p 8080:8080 jecklgamis/spring-boot-scala-example:latest
+docker run -p 8080:8080 jecklgamis/spring-boot-scala-example:main
 ```
 
 What's In the Box?
@@ -25,7 +25,7 @@ This is a **Github Template** project. You can create a copy of this project fro
 <kbd>Use this template</kbd> button.
 
 ## Building
-Ensure you have Java 17, Docker, and Make installed.
+Ensure you have Java 21, Docker, and Make installed.
 
 ```
 make all
