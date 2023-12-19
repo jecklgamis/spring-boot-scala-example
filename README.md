@@ -25,7 +25,7 @@ This is a **Github Template** project. You can create a copy of this project fro
 <kbd>Use this template</kbd> button.
 
 ## Building
-Ensure you have Java 8, Docker, and Make installed.
+Ensure you have Java 17, Docker, and Make installed.
 
 ```
 make all

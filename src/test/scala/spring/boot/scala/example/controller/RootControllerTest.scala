@@ -6,10 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment
 import org.springframework.boot.test.web.client.TestRestTemplate
-import org.springframework.boot.web.server.LocalServerPort
 import spring.boot.scala.example.controller.RootController
 
-class RootControllerTest extends BaseAppTest :
+class RootControllerTest extends BaseAppTest:
   @Autowired
   val rootController: RootController = null
 
