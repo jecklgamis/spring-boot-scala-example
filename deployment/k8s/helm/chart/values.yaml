@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   repository: jecklgamis/spring-boot-scala-example
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   tag: "main"
 
@@ -45,18 +45,20 @@ ingress:
   enabled: true
   className: ""
   annotations:
-     kubernetes.io/ingress.class: "istio"
-#     kubernetes.io/ingress.class: "nginx"
-    # kubernetes.io/tls-acme: "true"
+     kubernetes.io/ingress.class: "nginx"
+     nginx.ingress.kubernetes.io/rewrite-target: /
+     cert-manager.io/issuer: "letsencrypt-prod"
+     nginx.ingress.kubernetes.io/proxy-body-size: "0"
+     nginx.ingress.kubernetes.io/proxy-read-timeout: "600"
   hosts:
-    - host: spring-boot-scala-example.local
+    - host: spring-boot-scala-example.jecklgamis.com
       paths:
         - path: /
           pathType: Prefix
-  tls: []
-  #  - secretName: chart-example-tls
-  #    hosts:
-  #      - chart-example.local
+  tls:
+    - secretName: spring-boot-scala-example
+      hosts:
+        - spring-boot-scala-example.jecklgamis.com
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
