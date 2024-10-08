@@ -17,5 +17,5 @@ keystore:
 	@./generate-keystore.sh
 chart:
 	cd deployment/k8s/helm && make package
-all: dist image chart
+all: dist image
 up: all run
