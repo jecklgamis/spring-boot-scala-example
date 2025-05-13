@@ -1,5 +1,5 @@
-val springBootVersion = "3.2.0"
-val jacksonVersion = "2.16.0"
+val springBootVersion = "3.4.5"
+val jacksonVersion = "2.19.0"
 
 Global / onChangedBuildSource := ReloadOnSourceChanges
 
@@ -8,13 +8,13 @@ lazy val root = project
   .settings(
     name := "spring-boot-scala-example",
     version := "1.0.0-SNAPSHOT",
-    scalaVersion := "3.4.0-RC1-bin-20231218-ec2b8bc-NIGHTLY",
+    scalaVersion := "3.7.2-RC1-bin-20250512-e52986c-NIGHTLY",
     assembly / mainClass := Some("spring.boot.scala.example.ExampleApp"),
     assembly / assemblyJarName := "spring-boot-scala-example.jar",
     libraryDependencies += "org.springframework.boot" % "spring-boot-starter-web" % springBootVersion
       exclude("org.springframework.boot", "spring-boot-starter-tomcat"),
     libraryDependencies += "org.springframework.boot" % "spring-boot-starter-jetty" % springBootVersion,
-    libraryDependencies += "jakarta.servlet" % "jakarta.servlet-api" % "5.0.0",
+    libraryDependencies += "jakarta.servlet" % "jakarta.servlet-api" % "6.1.0",
     libraryDependencies += "org.springframework.boot" % "spring-boot-starter-actuator" % springBootVersion,
     libraryDependencies += "org.springframework.boot" % "spring-boot-starter-test" % springBootVersion % Test,
     libraryDependencies += "com.fasterxml.jackson.core" % "jackson-databind" % jacksonVersion,
@@ -22,7 +22,7 @@ lazy val root = project
     libraryDependencies += "com.fasterxml.jackson.module" % "jackson-module-scala_2.13" % jacksonVersion,
     libraryDependencies += "org.scalactic" %% "scalactic" % "3.3.0-alpha.1",
     libraryDependencies += "org.scalatest" %% "scalatest" % "3.3.0-alpha.1" % Test,
-    libraryDependencies += "org.junit.jupiter" % "junit-jupiter-engine" % "5.10.1" % Test,
+    libraryDependencies += "org.junit.jupiter" % "junit-jupiter-engine" % "5.13.0-M1" % Test,
     libraryDependencies += "net.aichler" % "jupiter-interface" % "0.11.1" % Test
   )
 
