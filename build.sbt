@@ -22,7 +22,6 @@ lazy val root = project
     libraryDependencies += "com.fasterxml.jackson.module" % "jackson-module-scala_2.13" % jacksonVersion,
     libraryDependencies += "org.scalactic" %% "scalactic" % "3.3.0-alpha.1",
     libraryDependencies += "org.scalatest" %% "scalatest" % "3.3.0-alpha.1" % Test,
-    libraryDependencies += "org.junit.jupiter" % "junit-jupiter-engine" % "5.13.0-M1" % Test,
     libraryDependencies += "net.aichler" % "jupiter-interface" % "0.11.1" % Test
   )
 
