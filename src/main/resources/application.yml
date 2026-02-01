@@ -2,21 +2,27 @@ application:
   name: "spring-boot-scala-example"
   description: "An example Spring Boot app using Scala"
 
+spring:
+  main:
+    banner-mode: off
+
 server:
   port: 8080
 
 management:
   endpoints:
-    enabled-by-default: true
+    enabled-by-default: false
     web:
       exposure:
-        include: "*"
+        include: health,info,metrics
   endpoint:
-    metrics:
-      enabled: true
     health:
       enabled: true
-      show-details: always
+      show-details: when-authorized
+    info:
+      enabled: true
+    metrics:
+      enabled: true
 
 logging:
   file:

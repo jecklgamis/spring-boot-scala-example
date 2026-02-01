@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.{RequestMapping, RestController}
 @RestController
 class RootController:
   @Value("${application.name}")
-  val appName: String = null
+  private val appName: String = null
 
   @RequestMapping(path = Array("/"), method = Array(GET))
   @Timed
