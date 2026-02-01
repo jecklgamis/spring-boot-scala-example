@@ -3,7 +3,7 @@ package spring.boot.scala.example.controller
 import io.micrometer.core.annotation.Timed
 import org.springframework.http.{MediaType, ResponseEntity}
 import org.springframework.web.bind.annotation.*
-import org.springframework.web.bind.ancommnotation.RequestMethod.GET
+import org.springframework.web.bind.annotation.RequestMethod.GET
 
 @RestController
 @RequestMapping(path = Array("/probe"), produces = Array(MediaType.APPLICATION_JSON_VALUE))
