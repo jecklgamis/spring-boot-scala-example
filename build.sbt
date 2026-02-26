@@ -20,7 +20,7 @@ lazy val root = project
     libraryDependencies += "net.aichler" % "jupiter-interface" % "0.11.1" % Test
   )
 
-ThisBuild / javacOptions ++= Seq("-source", "21")
+ThisBuild / javacOptions ++= Seq("-source", "25")
 ThisBuild / resolvers += Resolver.jcenterRepo
 
 ThisBuild / assemblyMergeStrategy := {

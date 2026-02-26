@@ -1,7 +1,7 @@
 FROM ubuntu:24.04
 LABEL maintainer="Jerrico Gamis <jecklgamis@gmail.com>"
 
-RUN apt update -y && apt install -y openjdk-21-jre-headless && rm -rf /var/lib/apt/lists/*
+RUN apt update -y && apt install -y openjdk-25-jre-headless && rm -rf /var/lib/apt/lists/*
 
 ENV APP_HOME=/app
 
