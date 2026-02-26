@@ -1,5 +1,5 @@
-val springBootVersion = "3.4.5"
-val jacksonVersion = "2.18.2"
+val springBootVersion = "3.5.3"
+val jacksonVersion = "2.19.1"
 
 Global / onChangedBuildSource := ReloadOnSourceChanges
 
