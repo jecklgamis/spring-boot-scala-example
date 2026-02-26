@@ -10,7 +10,7 @@ jobs:
     if: github.event.repository.name != 'spring-boot-scala-example'
     steps:
       - name: Fetch Sources
-        uses: actions/checkout@v2.3.4
+        uses: actions/checkout@v4
       - name: Prepare
         run: |
           set -ex
@@ -94,7 +94,7 @@ jobs:
           git add .
           git commit -a -m "Prepare repo"
       - name: Push changes
-        uses: ad-m/github-push-action@master
+        uses: ad-m/github-push-action@v1.0.0
         with:
           branch: main
           github_token: ${{ secrets.GITHUB_TOKEN }}
