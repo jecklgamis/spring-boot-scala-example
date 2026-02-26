@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Spring Boot application written in Scala 3. Dual build support with Maven (primary) and SBT (alternative).
 
-**Tech Stack**: Java 21, Scala 3, Spring Boot 3.4.x, Jetty, JUnit 5
+**Tech Stack**: Java 25, Scala 3, Spring Boot 3.5.x, Jetty, JUnit 5
 
 ## Build Commands
 
