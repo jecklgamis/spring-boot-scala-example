@@ -17,7 +17,8 @@ lazy val root = project
     libraryDependencies += "org.springframework.boot" % "spring-boot-starter-actuator" % springBootVersion,
     libraryDependencies += "org.springframework.boot" % "spring-boot-starter-test" % springBootVersion % Test,
     libraryDependencies += "com.fasterxml.jackson.module" % "jackson-module-scala_2.13" % jacksonVersion,
-    libraryDependencies += "net.aichler" % "jupiter-interface" % "0.11.1" % Test
+    libraryDependencies += "net.aichler" % "jupiter-interface" % "0.11.1" % Test,
+    dependencyOverrides += "org.junit.platform" % "junit-platform-launcher" % "1.12.2" % Test
   )
 
 ThisBuild / javacOptions ++= Seq("-source", "25")
