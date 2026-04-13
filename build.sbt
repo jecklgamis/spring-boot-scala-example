@@ -35,5 +35,6 @@ ThisBuild / assemblyMergeStrategy := {
   case PathList("META-INF", "spring-autoconfigure-metadata.properties") => MergeStrategy.concat
   case PathList("META-INF", "spring", "aot.factories") => MergeStrategy.concat
   case PathList("META-INF", "spring", "org.springframework.boot.autoconfigure.AutoConfiguration.imports") => MergeStrategy.concat
+  case PathList("META-INF", "spring", "org.springframework.boot.autoconfigure.AutoConfiguration.replacements") => MergeStrategy.concat
   case x => MergeStrategy.defaultMergeStrategy(x)
 }
