@@ -1,12 +1,11 @@
 package spring.boot.scala.example
 
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule
-import com.fasterxml.jackson.module.scala.DefaultScalaModule
-import org.springframework.boot.autoconfigure.jackson.Jackson2ObjectMapperBuilderCustomizer
-import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder
+import org.springframework.boot.jackson.autoconfigure.JsonMapperBuilderCustomizer
 import org.springframework.stereotype.Component
+import tools.jackson.databind.json.JsonMapper
+import tools.jackson.module.scala.DefaultScalaModule
 
 @Component
-class ObjectMapperCustomizer extends Jackson2ObjectMapperBuilderCustomizer :
-  override def customize(builder: Jackson2ObjectMapperBuilder): Unit =
-    builder.modules(DefaultScalaModule, new JavaTimeModule)
+class ObjectMapperCustomizer extends JsonMapperBuilderCustomizer :
+  override def customize(builder: JsonMapper.Builder): Unit =
+    builder.addModule(DefaultScalaModule)

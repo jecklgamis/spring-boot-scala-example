@@ -10,7 +10,7 @@ jobs:
     if: github.event.repository.name != 'spring-boot-scala-example'
     steps:
       - name: Fetch Sources
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
       - name: Prepare
         run: |
           set -ex
