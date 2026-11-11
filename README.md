@@ -54,7 +54,17 @@ curl http://localhost:8080/probe/ready
 curl http://localhost:8080/actuator/metrics
 curl http://localhost:8080/actuator/health
 ```
-or you can run `./smoke-tests.sh`
+or you can run `./run-smoke-tests.sh`
+
+## Load Testing
+
+Load tests use [resonate](https://github.com/jecklgamis/resonate). With the app running:
+
+```bash
+brew install jecklgamis/tap/resonate
+./run-perf-tests.sh
+```
+See [perf-tests](perf-tests) for the scenarios and details.
 
 ## Building With [SBT](https://www.scala-sbt.org/)
 

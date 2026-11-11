@@ -1,2 +1,7 @@
 # Created by .ignore support plugin (hsz.mobi)
 .idea
+
+# resonate reports
+perf-tests/*-report.html
+perf-tests/*-report.json
+perf-tests/*-results.jsonl

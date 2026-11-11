@@ -1,0 +1,37 @@
+# Load test for the root endpoint (GET /).
+#
+# Run (app must be up, e.g. `make run` or `java -jar target/spring-boot-scala-example.jar`):
+#   resonate run perf-tests/root-endpoint.yaml
+# To target another host, edit http.base_url below.
+protocol: http
+
+load:
+  stages:
+    # Ramp up: 0 -> 50 workers / 100 iterations/sec over 15s.
+    - duration: 15s
+      workers: 50
+      rate: 100
+    # Steady state for 1 minute.
+    - duration: 1m
+      workers: 50
+      rate: 100
+    # Ramp down to 0 over 10s.
+    - duration: 10s
+      workers: 0
+      rate: 0
+
+http:
+  base_url: http://localhost:8080
+  timeout: 5s
+  targets:
+    - method: GET
+      url: /
+      headers:
+        Accept: application/json
+      expect_status: [200]
+
+assertions:
+  - metric: success_rate
+    min: "0.99"
+  - metric: latency_p95
+    max: 200ms
